@@ -38,13 +38,13 @@ namespace Ical.Net.Evaluation
             // Evaluate recurrences normally
             base.Evaluate(referenceTime, periodStart, periodEnd, includeReferenceDateInResults);
 
-            foreach (var period in Periods)
+            /*foreach (var period in Periods)
             {
                 period.Duration = CalendarEvent.Duration;
                 period.EndTime = period.Duration == null
                     ? period.StartTime
                     : period.StartTime.Add(CalendarEvent.Duration);
-            }
+            }*/
 
             // Ensure each period has a duration
             foreach (var period in Periods.Where(p => p.EndTime == null))
